@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 const { graphqlHTTP } = require('express-graphql');
+const referrerPolicy = require('referrer-policy');
 
 const fileHelper = require('./util/file');
 const graphqlSchema = require('./graphql/schema');
@@ -25,11 +26,23 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(fileHelper.upload.single('image'));
 app.use(fileHelper.imageStore.uploadToCloud);
 
-app.use(cors({ 
-  origin: '*',
-  methods: 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-  allowedHeaders: 'Content-Type, Authorization'
-}));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
+app.use(referrerPolicy({ policy: 'same-origin' }));
+
+// app.use(cors({ 
+//   origin: '*',
+//   methods: 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
+//   allowedHeaders: 'Content-Type, Authorization'
+// }));
 
 app.use(auth);
 
