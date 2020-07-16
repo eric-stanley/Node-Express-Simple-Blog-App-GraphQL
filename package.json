@@ -1,0 +1,44 @@
+{
+  "name": "node-express-simple-api-app",
+  "version": "1.0.0",
+  "description": "simple nodejs express api app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric-stanley/Node-Express-Simple-API-App.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "api"
+  ],
+  "author": "Eric Stanley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eric-stanley/Node-Express-Simple-API-App/issues"
+  },
+  "homepage": "https://github.com/eric-stanley/Node-Express-Simple-API-App#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.22.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "express-validator": "^6.6.0",
+    "graphql": "^15.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.22",
+    "multer": "^1.4.2",
+    "socket.io": "^2.3.0",
+    "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
