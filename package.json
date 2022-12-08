@@ -24,11 +24,11 @@
   "homepage": "https://github.com/eric-stanley/Node-Express-Simple-API-App#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "cloudinary": "^1.22.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-graphql": "^0.11.0",
     "express-validator": "^6.6.0",
     "graphql": "^15.3.0",
